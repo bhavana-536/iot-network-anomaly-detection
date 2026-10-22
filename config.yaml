@@ -1,0 +1,88 @@
+# =============================================================================
+# config.yaml  -  Central configuration for IoT Anomaly Detection project
+# Edit the dataset_paths section to point at your actual data locations.
+# =============================================================================
+
+# ── Dashboard settings ───────────────────────────────────────────────────────
+# Change alert_file to switch between the fake sample and the live pipeline.
+dashboard:
+  alert_file: "logs/alerts.csv"   # ← change to live pipeline output to go live
+
+random_seed: 42
+chunk_size: 50_000          # rows read per CSV chunk
+max_rows_per_dataset: 500_000   # hard cap; 0 = unlimited
+split_ratios:               # must sum to 1.0
+  train: 0.70
+  validation: 0.15
+  test: 0.15
+
+# -- Dataset file/folder paths -----------------------------------------------
+# Set each value to the path on YOUR machine.
+# A path can be a single CSV file OR a folder (all *.csv inside are used).
+# Set to null or "" to skip a dataset.
+dataset_paths:
+  CICIoT2023:   "C:\\Users\\sneha\\Downloads\\CICIoT2023.csv"
+  TON_IoT:      "C:\\Users\\sneha\\Downloads\\ton_iot\\Processed_Network_dataset"
+  Edge-IIoTset: "C:\\Users\\sneha\\Downloads\\Edge-IIoTset"
+  BoT-IoT:      "C:\\Users\\sneha\\Downloads\\BoT-IoT.csv"
+  MQTTset:      "C:\\Users\\sneha\\Downloads\\MQTTset.csv"
+  IoT-23:       "C:\\Users\\sneha\\Downloads\\IoT-23"
+
+# -- Per-dataset label column configuration ----------------------------------
+# attack_col   : column whose values are attack-TYPE strings (what we model)
+# binary_col   : optional 0/1 column (0=benign, 1=attack); used only for
+#                filtering when attack_col is ambiguous
+# Note: column names are normalised to lowercase_with_underscores before lookup
+dataset_labels:
+  CICIoT2023:
+    attack_col: "label"
+    binary_col: null
+  TON_IoT:
+    attack_col: "type"
+    binary_col: "label"
+  Edge-IIoTset:
+    attack_col: "attack"
+    binary_col: null
+  BoT-IoT:
+    attack_col: "attack"
+    binary_col: "label"
+  MQTTset:
+    attack_col: "attack"
+    binary_col: null
+  IoT-23:
+    attack_col: "detailed-label"
+    binary_col: "label"
+
+# -- Identifier / metadata columns to DROP -----------------------------------
+identifier_cols:
+  - src_ip
+  - dst_ip
+  - saddr
+  - daddr
+  - source_ip
+  - destination_ip
+  - src_mac
+  - dst_mac
+  - smac
+  - dmac
+  - timestamp
+  - ts
+  - stime
+  - ltime
+  - flow_id
+  - id
+  - pkseqid
+  - uid
+
+# -- Categorical feature columns (encode, do not drop) -----------------------
+categorical_cols:
+  - proto
+  - protocol
+  - service
+  - conn_state
+  - state
+
+# -- Output directories -------------------------------------------------------
+output_dir:       "data/processed"
+artifacts_dir:    "artifacts"
+reports_dir:      "reports"

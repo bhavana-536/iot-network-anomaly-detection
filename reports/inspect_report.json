@@ -1,0 +1,56 @@
+[
+  {
+    "dataset": "CICIoT2023",
+    "path": "C:\\Users\\sneha\\Downloads\\CICIoT2023.csv",
+    "status": "PATH NOT FOUND or no CSV files",
+    "csv_files": [],
+    "rows_sampled": 0,
+    "columns": [],
+    "label_candidates": {}
+  },
+  {
+    "dataset": "TON_IoT",
+    "path": "C:\\Users\\sneha\\Downloads\\ton_iot\\Processed_Network_dataset",
+    "status": "PATH NOT FOUND or no CSV files",
+    "csv_files": [],
+    "rows_sampled": 0,
+    "columns": [],
+    "label_candidates": {}
+  },
+  {
+    "dataset": "Edge-IIoTset",
+    "path": "C:\\Users\\sneha\\Downloads\\Edge-IIoTset",
+    "status": "PATH NOT FOUND or no CSV files",
+    "csv_files": [],
+    "rows_sampled": 0,
+    "columns": [],
+    "label_candidates": {}
+  },
+  {
+    "dataset": "BoT-IoT",
+    "path": "C:\\Users\\sneha\\Downloads\\BoT-IoT.csv",
+    "status": "PATH NOT FOUND or no CSV files",
+    "csv_files": [],
+    "rows_sampled": 0,
+    "columns": [],
+    "label_candidates": {}
+  },
+  {
+    "dataset": "MQTTset",
+    "path": "C:\\Users\\sneha\\Downloads\\MQTTset.csv",
+    "status": "PATH NOT FOUND or no CSV files",
+    "csv_files": [],
+    "rows_sampled": 0,
+    "columns": [],
+    "label_candidates": {}
+  },
+  {
+    "dataset": "IoT-23",
+    "path": "C:\\Users\\sneha\\Downloads\\IoT-23",
+    "status": "PATH NOT FOUND or no CSV files",
+    "csv_files": [],
+    "rows_sampled": 0,
+    "columns": [],
+    "label_candidates": {}
+  }
+]
